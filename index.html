@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- TODO: replace "Marine Diesel Services" with your business name everywhere on this page -->
+  <title>Marine Diesel Services | Engine, Generator &amp; Maintenance</title>
+  <meta name="description" content="Marine diesel engine repair, diesel generator service, and preventive maintenance for boats and vessels.">
+  <style>
+    :root {
+      --navy: #0b2540;
+      --navy-2: #12365c;
+      --sea: #1f7a8c;
+      --accent: #f2a541;
+      --ink: #1c2530;
+      --muted: #5a6b7b;
+      --bg: #f6f8fa;
+      --card: #ffffff;
+      --line: #e1e7ed;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: var(--navy);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--accent); }
+
+    .nav ul {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav ul a {
+      text-decoration: none;
+      opacity: 0.85;
+      font-size: 0.95rem;
+    }
+
+    .nav ul a:hover { opacity: 1; }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.15s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary { background: var(--accent); color: var(--navy); }
+
+    .btn-ghost {
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      color: #fff;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 55%, var(--sea) 100%);
+      color: #fff;
+      padding: 90px 0 100px;
+    }
+
+    .hero .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 700;
+      margin: 0 0 12px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      margin: 0 0 18px;
+      max-width: 720px;
+    }
+
+    .hero p.lead {
+      font-size: 1.15rem;
+      max-width: 620px;
+      opacity: 0.9;
+      margin: 0 0 30px;
+    }
+
+    .hero .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* Sections */
+    section { padding: 80px 0; }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      margin: 0 0 10px;
+      color: var(--navy);
+    }
+
+    .section-title p {
+      color: var(--muted);
+      margin: 0 auto;
+      max-width: 600px;
+    }
+
+    /* Services */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .card .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: rgba(31, 122, 140, 0.12);
+      color: var(--sea);
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+    }
+
+    .card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--ink);
+    }
+
+    .card li { margin-bottom: 4px; }
+
+    /* Why us */
+    .why { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+    .why .grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+    .why-item h3 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+      color: var(--navy);
+    }
+
+    .why-item p { margin: 0; color: var(--muted); }
+
+    .why-item .num {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+    }
+
+    /* Contact */
+    .contact {
+      background: var(--navy);
+      color: #fff;
+      text-align: center;
+    }
+
+    .contact h2 { margin: 0 0 10px; font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
+
+    .contact p { opacity: 0.85; margin: 0 auto 30px; max-width: 560px; }
+
+    .contact-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .contact .area {
+      font-size: 0.95rem;
+      opacity: 0.7;
+      margin: 0;
+    }
+
+    footer {
+      background: #07192c;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 22px 0;
+    }
+
+    /* Phones */
+    @media (max-width: 640px) {
+      .nav ul { display: none; }
+      .hero { padding: 64px 0 72px; }
+      section { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap nav">
+      <a href="#top" class="logo">Marine Diesel <span>Services</span></a>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-primary">Get a Quote</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Marine Diesel Specialists</p>
+        <h1>Keep your engines and generators running strong.</h1>
+        <p class="lead">
+          Expert service, repair, and maintenance for marine diesel engines and
+          diesel generators, so you spend more time on the water and less time at the dock.
+        </p>
+        <div class="actions">
+          <a href="#contact" class="btn btn-primary">Schedule Service</a>
+          <a href="#services" class="btn btn-ghost">View Services</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Our Services</h2>
+          <p>From routine upkeep to full repairs, we handle every part of your diesel system.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>
+            </div>
+            <h3>Diesel Engine Service &amp; Repair</h3>
+            <p>Inboard and auxiliary marine diesel engines of any make.</p>
+            <ul>
+              <li>Diagnostics and troubleshooting</li>
+              <li>Fuel system and injector service</li>
+              <li>Cooling system and heat exchangers</li>
+              <li>Repairs and rebuilds</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3>Diesel Generators</h3>
+            <p>Installation support, service, and repair for all types of diesel generators.</p>
+            <ul>
+              <li>Startup and load testing</li>
+              <li>Electrical output troubleshooting</li>
+              <li>Fuel, oil, and filter service</li>
+              <li>Repairs for any make or model</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg>
+            </div>
+            <h3>General Maintenance</h3>
+            <p>Scheduled upkeep that prevents breakdowns and extends engine life.</p>
+            <ul>
+              <li>Oil and filter changes</li>
+              <li>Belts, hoses, and impellers</li>
+              <li>Seasonal commissioning and winterizing</li>
+              <li>Pre-trip inspections</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="why">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Why Choose Us</h2>
+          <p>Straightforward, reliable diesel work you can count on.</p>
+        </div>
+
+        <div class="grid">
+          <div class="why-item">
+            <div class="num">01</div>
+            <h3>Diesel Focused</h3>
+            <p>Diesel engines and generators are all we do.</p>
+          </div>
+          <div class="why-item">
+            <div class="num">02</div>
+            <h3>All Makes &amp; Models</h3>
+            <p>We work on every type of marine diesel engine and generator.</p>
+          </div>
+          <div class="why-item">
+            <div class="num">03</div>
+            <h3>Clear Communication</h3>
+            <p>We explain the problem and the cost before any work starts.</p>
+          </div>
+          <div class="why-item">
+            <div class="num">04</div>
+            <h3>Prevention First</h3>
+            <p>Regular maintenance to stop small issues becoming big repairs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <h2>Ready to schedule service?</h2>
+        <p>Call or email to book a visit or ask for a quote. Tell us about your engine or generator and what's going on.</p>
+        <div class="contact-list">
+          <!-- TODO: replace with your real phone number (both the link and the text) -->
+          <a href="tel:+15555555555" class="btn btn-primary">Call (555) 555-5555</a>
+          <!-- TODO: replace with your real email address (both the link and the text) -->
+          <a href="mailto:you@example.com" class="btn btn-ghost">you@example.com</a>
+        </div>
+        <!-- TODO: replace with the area you serve -->
+        <p class="area">Serving: [Your service area]</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      &copy; 2026 Marine Diesel Services. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
