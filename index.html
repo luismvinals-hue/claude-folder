@@ -106,9 +106,12 @@
 
     /* Hero */
     .hero {
-      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 55%, var(--sea) 100%);
+      background:
+        linear-gradient(90deg, rgba(11, 37, 64, 0.92) 0%, rgba(11, 37, 64, 0.75) 50%, rgba(11, 37, 64, 0.35) 100%),
+        url("images/hero-yacht-miami.jpg") center / cover no-repeat,
+        var(--navy);
       color: #fff;
-      padding: 90px 0 100px;
+      padding: 110px 0 120px;
     }
 
     .hero .eyebrow {
@@ -203,6 +206,27 @@
 
     .card li { margin-bottom: 4px; }
 
+    /* Photo strip */
+    .gallery { padding-top: 0; }
+
+    .gallery .photos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: var(--radius);
+      background: var(--line);
+    }
+
+    .gallery img.tall { object-position: center 65%; }
+
     /* Why us */
     .why { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 
@@ -261,7 +285,14 @@
       .nav ul { display: none; }
       .nav .btn { padding: 9px 16px; font-size: 0.9rem; }
       .logo { font-size: 1rem; line-height: 1.25; }
-      .hero { padding: 64px 0 72px; }
+      .hero {
+        padding: 72px 0 80px;
+        background:
+          linear-gradient(rgba(11, 37, 64, 0.82), rgba(11, 37, 64, 0.82)),
+          url("images/hero-yacht-miami.jpg") center / cover no-repeat,
+          var(--navy);
+      }
+      .gallery .photos { grid-template-columns: 1fr; }
       section { padding: 60px 0; }
     }
   </style>
@@ -372,6 +403,14 @@
             </ul>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="gallery" aria-label="Yachts in South Florida">
+      <div class="wrap photos">
+        <img src="images/sportfish-fort-lauderdale.jpg" alt="Sportfishing yacht docked by palm trees and waterfront homes in Fort Lauderdale" loading="lazy" width="900" height="600">
+        <img src="images/yacht-fort-lauderdale-home.jpg" alt="White motor yacht docked at a waterfront home in Fort Lauderdale" loading="lazy" width="900" height="600">
+        <img src="images/superyacht-fort-lauderdale.jpg" class="tall" alt="Superyacht docked in Fort Lauderdale under a clear blue sky" loading="lazy" width="900" height="1350">
       </div>
     </section>
 
