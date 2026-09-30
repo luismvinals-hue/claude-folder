@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vinals Marine Diesel | Engine, Generator &amp; Maintenance</title>
+  <meta name="description" content="Marine diesel engine diagnostics and repair, component rebuilds and dyno testing, diesel generator sales and load testing, surveys, sea trials, and routine maintenance in South Florida.">
+  <link rel="canonical" href="https://vinalsmarine.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vinalsmarine.com/">
+  <meta property="og:title" content="Vinals Marine Diesel">
+  <meta property="og:description" content="Marine diesel engine diagnostics and repair, component rebuilds and dyno testing, diesel generator sales and load testing, surveys, sea trials, and routine maintenance in South Florida.">
+  <style>
+    :root {
+      --navy: #0b2540;
+      --navy-2: #12365c;
+      --sea: #1f7a8c;
+      --accent: #f2a541;
+      --ink: #1c2530;
+      --muted: #5a6b7b;
+      --bg: #f6f8fa;
+      --card: #ffffff;
+      --line: #e1e7ed;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: var(--navy);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--accent); }
+
+    .nav ul {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav ul a {
+      text-decoration: none;
+      opacity: 0.85;
+      font-size: 0.95rem;
+    }
+
+    .nav ul a:hover { opacity: 1; }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 0.15s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary { background: var(--accent); color: var(--navy); }
+
+    .btn-ghost {
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      color: #fff;
+    }
+
+    /* Hero */
+    .hero {
+      background:
+        linear-gradient(90deg, rgba(11, 37, 64, 0.92) 0%, rgba(11, 37, 64, 0.75) 50%, rgba(11, 37, 64, 0.35) 100%),
+        url("images/hero-yacht-miami.jpg") center / cover no-repeat,
+        var(--navy);
+      color: #fff;
+      padding: 110px 0 120px;
+    }
+
+    .hero .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 700;
+      margin: 0 0 12px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      margin: 0 0 18px;
+      max-width: 720px;
+    }
+
+    .hero p.lead {
+      font-size: 1.15rem;
+      max-width: 620px;
+      opacity: 0.9;
+      margin: 0 0 30px;
+    }
+
+    .hero .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* Sections */
+    section { padding: 80px 0; }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      margin: 0 0 10px;
+      color: var(--navy);
+    }
+
+    .section-title p {
+      color: var(--muted);
+      margin: 0 auto;
+      max-width: 600px;
+    }
+
+    /* Services */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .card .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: rgba(31, 122, 140, 0.12);
+      color: var(--sea);
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+    }
+
+    .card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--ink);
+    }
+
+    .card li { margin-bottom: 4px; }
+
+    /* Photo strip */
+    .gallery { padding-top: 0; }
+
+    .gallery .photos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: var(--radius);
+      background: var(--line);
+    }
+
+    .gallery img.tall { object-position: center 65%; }
+
+    /* Why us */
+    .why { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+    .why .grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+    .why-item h3 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+      color: var(--navy);
+    }
+
+    .why-item p { margin: 0; color: var(--muted); }
+
+    .why-item .num {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+    }
+
+    /* Contact */
+    .contact {
+      background: var(--navy);
+      color: #fff;
+      text-align: center;
+    }
+
+    .contact h2 { margin: 0 0 10px; font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
+
+    .contact p { opacity: 0.85; margin: 0 auto 30px; max-width: 560px; }
+
+    .contact-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .contact .area {
+      font-size: 0.95rem;
+      opacity: 0.7;
+      margin: 0;
+    }
+
+    /* Service request form */
+    .request {
+      background: var(--card);
+      color: var(--ink);
+      text-align: left;
+      max-width: 680px;
+      margin: 36px auto 28px;
+      padding: 28px;
+      border-radius: var(--radius);
+    }
+
+    .request h3 {
+      margin: 0 0 4px;
+      color: var(--navy);
+      font-size: 1.25rem;
+    }
+
+    .request .hint {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0 0 20px;
+    }
+
+    .fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .field { display: flex; flex-direction: column; gap: 6px; }
+
+    .field.full { grid-column: 1 / -1; }
+
+    .field label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--navy);
+    }
+
+    .field .optional { font-weight: 400; color: var(--muted); }
+
+    .field input,
+    .field select,
+    .field textarea {
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid #c9d3dc;
+      border-radius: 8px;
+      padding: 11px 12px;
+      width: 100%;
+    }
+
+    .field textarea { min-height: 130px; resize: vertical; }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--sea);
+      box-shadow: 0 0 0 3px rgba(31, 122, 140, 0.2);
+    }
+
+    .request .btn {
+      border: 0;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 700;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .honeypot { position: absolute; left: -9999px; }
+
+    footer {
+      background: #07192c;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 22px 0;
+    }
+
+    /* Phones */
+    @media (max-width: 640px) {
+      .nav ul { display: none; }
+      .nav .btn { padding: 9px 16px; font-size: 0.9rem; }
+      .logo { font-size: 1rem; line-height: 1.25; }
+      .hero {
+        padding: 72px 0 80px;
+        background:
+          linear-gradient(rgba(11, 37, 64, 0.82), rgba(11, 37, 64, 0.82)),
+          url("images/hero-yacht-miami.jpg") center / cover no-repeat,
+          var(--navy);
+      }
+      .gallery .photos { grid-template-columns: 1fr; }
+      .fields { grid-template-columns: 1fr; }
+      .request { padding: 22px 18px; }
+      section { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap nav">
+      <a href="#top" class="logo">VINALS <span>MARINE DIESEL</span></a>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-primary">Get a Quote</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Marine Diesel Specialists</p>
+        <h1>Keep your engines and generators running strong.</h1>
+        <p class="lead">
+          Expert diagnostics, repair, testing, and maintenance for marine diesel engines and
+          diesel generators, so you spend more time on the water and less time at the dock.
+        </p>
+        <div class="actions">
+          <a href="#contact" class="btn btn-primary">Schedule Service</a>
+          <a href="#services" class="btn btn-ghost">View Services</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Our Services</h2>
+          <p>From tracking down a problem to rebuilding and testing parts, we handle your diesel engines and generators.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>
+            </div>
+            <h3>Diagnostics &amp; Repair</h3>
+            <p>We find the root cause and fix it right, on marine diesel engines of any make.</p>
+            <ul>
+              <li>Troubleshooting and diagnostics</li>
+              <li>Repairs, from small leaks to major failures</li>
+              <li>Top-end overhauls: cylinder heads and valves</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+            </div>
+            <h3>Component Rebuilds &amp; Dyno Testing</h3>
+            <p>Worn parts rebuilt to spec, then tested so you know they perform.</p>
+            <ul>
+              <li>Injectors and injection pumps</li>
+              <li>Raw water and coolant pumps</li>
+              <li>Turbochargers and cylinder heads</li>
+              <li>Alternators and starter motors</li>
+              <li>Dyno testing to verify power and performance</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3>Diesel Generators</h3>
+            <p>Sales, installation, testing, and repair for all types of diesel generators.</p>
+            <ul>
+              <li>New generator sales and installation</li>
+              <li>Load testing under full power</li>
+              <li>Troubleshooting and repair for any make or model</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M8 11l2 2 4-4"/></svg>
+            </div>
+            <h3>Surveys &amp; Sea Trials</h3>
+            <p>Know exactly what condition your engines and generators are in.</p>
+            <ul>
+              <li>Engine and generator surveys, including pre-purchase</li>
+              <li>Sea trials to confirm everything runs right on the water</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg>
+            </div>
+            <h3>Routine Maintenance</h3>
+            <p>Service on the manufacturer's schedule, to prevent breakdowns and extend engine life.</p>
+            <ul>
+              <li>Scheduled service at the recommended hour intervals</li>
+              <li>Oil and filter changes</li>
+              <li>Belts, hoses, and impellers</li>
+              <li>Pre-trip inspections</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" aria-label="Yachts in South Florida">
+      <div class="wrap photos">
+        <img src="images/sportfish-fort-lauderdale.jpg" alt="Sportfishing yacht docked by palm trees and waterfront homes in Fort Lauderdale" loading="lazy" width="900" height="600">
+        <img src="images/yacht-fort-lauderdale-home.jpg" alt="White motor yacht docked at a waterfront home in Fort Lauderdale" loading="lazy" width="900" height="600">
+        <img src="images/superyacht-fort-lauderdale.jpg" class="tall" alt="Superyacht docked in Fort Lauderdale under a clear blue sky" loading="lazy" width="900" height="1350">
+      </div>
+    </section>
+
+    <section id="why" class="why">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Why Choose Us</h2>
+          <p>Straightforward, reliable diesel work you can count on.</p>
+        </div>
+
+        <div class="grid">
+          <div class="why-item">
+            <div class="num">01</div>
+            <h3>Diesel Focused</h3>
+            <p>Diesel engines and generators are all we do.</p>
+          </div>
+          <div class="why-item">
+            <div class="num">02</div>
+            <h3>All Makes &amp; Models</h3>
+            <p>We work on every type of marine diesel engine and generator.</p>
+          </div>
+          <div class="why-item">
+            <div class="num">03</div>
+            <h3>Clear Communication</h3>
+            <p>We explain the problem and the cost before any work starts.</p>
+          </div>
+          <div class="why-item">
+            <div class="num">04</div>
+            <h3>Se Habla Español</h3>
+            <p>We're happy to serve you in English or Spanish.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <h2>Ready to schedule service?</h2>
+        <p>Send us a service request, or call or email to book a visit or ask for a quote.</p>
+
+        <form class="request" action="https://formsubmit.co/Chris@vinalsmarine.com" method="POST">
+          <h3>Request Service</h3>
+          <p class="hint">Tell us about your boat and what's going on. We'll get back to you as soon as possible.</p>
+
+          <input type="hidden" name="_subject" value="New service request from vinalsmarine.com">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://vinalsmarine.com/thanks.html">
+          <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="fields">
+            <div class="field">
+              <label for="first-name">First name</label>
+              <input id="first-name" name="First name" type="text" autocomplete="given-name" required>
+            </div>
+            <div class="field">
+              <label for="last-name">Last name</label>
+              <input id="last-name" name="Last name" type="text" autocomplete="family-name" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone number</label>
+              <input id="phone" name="Phone" type="tel" autocomplete="tel" inputmode="tel" required>
+            </div>
+            <div class="field">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field full">
+              <label for="boat-type">Boat type</label>
+              <select id="boat-type" name="Boat type" required>
+                <option value="" disabled selected>Select your boat type</option>
+                <option>Motor yacht</option>
+                <option>Superyacht</option>
+                <option>Sportfishing boat</option>
+                <option>Sailboat / sailing yacht</option>
+                <option>Trawler</option>
+                <option>Commercial vessel</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="problem">Description of the problem</label>
+              <textarea id="problem" name="Problem description" placeholder="Engine or generator make and model, what's happening, and where the boat is docked." required></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send Request</button>
+        </form>
+
+        <p>Prefer to talk? Call or email us directly.</p>
+        <div class="contact-list">
+          <a href="tel:+19545524600" class="btn btn-primary">Call (954) 552-4600</a>
+          <a href="mailto:Chris@vinalsmarine.com" class="btn btn-ghost">Chris@vinalsmarine.com</a>
+        </div>
+        <p class="area">Serving: Broward, Miami-Dade &amp; Palm Beach Counties · Se habla español</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      &copy; 2026 Vinals Marine Diesel. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
