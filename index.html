@@ -272,6 +272,80 @@
       margin: 0;
     }
 
+    /* Service request form */
+    .request {
+      background: var(--card);
+      color: var(--ink);
+      text-align: left;
+      max-width: 680px;
+      margin: 36px auto 28px;
+      padding: 28px;
+      border-radius: var(--radius);
+    }
+
+    .request h3 {
+      margin: 0 0 4px;
+      color: var(--navy);
+      font-size: 1.25rem;
+    }
+
+    .request .hint {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0 0 20px;
+    }
+
+    .fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .field { display: flex; flex-direction: column; gap: 6px; }
+
+    .field.full { grid-column: 1 / -1; }
+
+    .field label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--navy);
+    }
+
+    .field .optional { font-weight: 400; color: var(--muted); }
+
+    .field input,
+    .field select,
+    .field textarea {
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid #c9d3dc;
+      border-radius: 8px;
+      padding: 11px 12px;
+      width: 100%;
+    }
+
+    .field textarea { min-height: 130px; resize: vertical; }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--sea);
+      box-shadow: 0 0 0 3px rgba(31, 122, 140, 0.2);
+    }
+
+    .request .btn {
+      border: 0;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 700;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .honeypot { position: absolute; left: -9999px; }
+
     footer {
       background: #07192c;
       color: rgba(255, 255, 255, 0.6);
@@ -293,6 +367,8 @@
           var(--navy);
       }
       .gallery .photos { grid-template-columns: 1fr; }
+      .fields { grid-template-columns: 1fr; }
+      .request { padding: 22px 18px; }
       section { padding: 60px 0; }
     }
   </style>
@@ -449,7 +525,57 @@
     <section id="contact" class="contact">
       <div class="wrap">
         <h2>Ready to schedule service?</h2>
-        <p>Call or email to book a visit or ask for a quote. Tell us about your engine or generator and what's going on.</p>
+        <p>Send us a service request, or call or email to book a visit or ask for a quote.</p>
+
+        <form class="request" action="https://formsubmit.co/Chris@vinalsmarine.com" method="POST">
+          <h3>Request Service</h3>
+          <p class="hint">Tell us about your boat and what's going on. We'll get back to you as soon as possible.</p>
+
+          <input type="hidden" name="_subject" value="New service request from vinalsmarine.com">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://vinalsmarine.com/thanks.html">
+          <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="fields">
+            <div class="field">
+              <label for="first-name">First name</label>
+              <input id="first-name" name="First name" type="text" autocomplete="given-name" required>
+            </div>
+            <div class="field">
+              <label for="last-name">Last name</label>
+              <input id="last-name" name="Last name" type="text" autocomplete="family-name" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone number</label>
+              <input id="phone" name="Phone" type="tel" autocomplete="tel" inputmode="tel" required>
+            </div>
+            <div class="field">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field full">
+              <label for="boat-type">Boat type</label>
+              <select id="boat-type" name="Boat type" required>
+                <option value="" disabled selected>Select your boat type</option>
+                <option>Motor yacht</option>
+                <option>Superyacht</option>
+                <option>Sportfishing boat</option>
+                <option>Sailboat / sailing yacht</option>
+                <option>Trawler</option>
+                <option>Commercial vessel</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="problem">Description of the problem</label>
+              <textarea id="problem" name="Problem description" placeholder="Engine or generator make and model, what's happening, and where the boat is docked." required></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send Request</button>
+        </form>
+
+        <p>Prefer to talk? Call or email us directly.</p>
         <div class="contact-list">
           <a href="tel:+19545524600" class="btn btn-primary">Call (954) 552-4600</a>
           <a href="mailto:Chris@vinalsmarine.com" class="btn btn-ghost">Chris@vinalsmarine.com</a>
